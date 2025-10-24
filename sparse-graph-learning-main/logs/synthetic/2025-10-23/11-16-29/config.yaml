@@ -1,0 +1,39 @@
+tags:
+- synthetic
+- graph_id
+workers: 0
+num_threads: 1
+dataset:
+  name: gpolyvar
+  splits:
+    val_len: 0.1
+    test_len: 0.2
+window: 12
+horizon: 1
+stride: 1
+batch_size: 128
+epochs: 50
+patience: 400
+batches_epoch: -1
+graph_mode: sf
+mc_samples: 1
+lam: null
+sf_weight: 1.0
+use_baseline: true
+variance_reduced: true
+graph_module:
+  hparams:
+    k: 5
+    tau: 1.0
+    sampler: sns
+    dummy_nodes: 4
+clip_grad: true
+optimizer:
+  hparams:
+    lr: 0.05
+    weight_decay: 0.0
+experiment_name: graph_id
+run:
+  seed: 519532292
+  dir: /home/wangxc1117/sparse-graph-learning-use/sparse-graph-learning-main/logs/synthetic/2025-10-23/11-16-29
+  name: 2025-10-23_11-16-29_519532292
